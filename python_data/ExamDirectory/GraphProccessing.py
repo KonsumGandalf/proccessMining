@@ -68,11 +68,11 @@ def for_all_categories():
         event_handler = EventHandler(additional_path=SESSION_DIR, data_name=f'{io_name}.pkl')
         df = event_handler.read_pickle()
         event_log = log_converter.apply(df, variant=log_converter.TO_EVENT_LOG)
-        # pmHandler = Pm4pyHandler(log, format_img='svg')
+        pmHandler = Pm4pyHandler(event_log, session_dir=SESSION_DIR, format_img='svg')
         # pmHandler.rating_best_model(output_full=True, file_name='rating_model', session_dir=SESSION_DIR,add_suffix=io_name)
         # pmHandler.visualize_diagram(session_dir=SESSION_DIR,add_suffix=io_name, add_dir_2=io_name)
-        print(1)
-        variant_helper(event_log, df, io_name)
+        # variant_helper(event_log, df, io_name)
+        pmHandler.local_visualization(io_name)
 
 def main():
     for_all_categories()

@@ -87,6 +87,7 @@ class EntryRating:
 
 
 class Pm4pyHandler:
+    module_dir = 'Pm4Py'
     """
     Miner Options: ['Alpha', 'Inductive', 'Heuristic']
     :var log: data used for process mining
@@ -319,7 +320,7 @@ class Pm4pyHandler:
         dfg_visualizer.view(gviz)
         return gviz
 
-    def save_file(self, file, filename: str, session_dir=None, add_dir=None, add_dir_2=None):
+    def save_file(self, file, filename: str, session_dir=None, add_dir=None, add_dir_2=None,  mode=''):
         """
         heuristic nets cant be saved!
         :param self.format already determines in apply the format
@@ -327,7 +328,13 @@ class Pm4pyHandler:
         :param file: file which is saved
         :return:
         """
-        save_file(file, filename, session_dir, add_dir, add_dir_3=add_dir_2)
+        if session_dir:
+            self.session_dir = session_dir
+
+        if add_dir:
+            self.module_dir = add_dir
+
+        save_file(file, filename, self.session_dir, self.module_dir, add_dir_3=add_dir_2, mode=mode)
 
     def rating_net_model(self, p_net_compose, name: str = '', output=True, isConformance=False, isAlignments=False,
                          isScore=False):
@@ -467,7 +474,36 @@ class Pm4pyHandler:
 
         return rating_list
 
-    def local_visualization(self):
+    def local_visualization(self, io_name):
+
+        petri_net = self.inductive_processing(mode_detail='petri_net', variant='imd')
+        gviz = self.petri_net_visualization(petri_net)
+        self.save_file(petri_net, filename='petri_net_imd', add_dir_2=io_name, mode='petri_net')
+
+        self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
+                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 3000,
+                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: 3000},
+                               replace=True)
+        petri_net = self.heuristic_processing(mode_detail='petri_net')
+        gviz = self.petri_net_visualization(petri_net)
+        self.save_file(petri_net, filename='petri_net_3000_3000', add_dir_2=io_name, mode='petri_net')
+
+        self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
+                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 300,
+                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: 300},
+                               replace=True)
+        heuristic_net = self.heuristic_processing()
+        gviz = self.heuristic_visualization(heuristic_net)
+        self.save_file(heuristic_net, filename='heuristic_net_300_300', add_dir_2=io_name, mode='heuristic_net')
+
+        process_tree = self.inductive_processing(mode_detail='process_tree', variant='imd')
+        gviz = self.inductive_visualization(process_tree)
+        self.save_file(process_tree, filename='process_tree', add_dir_2=io_name, mode='process_tree')
+
+        variant_dfg = 'FREQUENCY'
+        dfg = self.dfg_processing(variant=variant_dfg)
+        gviz = self.dfg_visualization(dfg)
+        self.save_file(gviz, filename='dfg', add_dir_2=io_name)
 
 
     def visualize_diagram(self, session_dir, add_dir_2='', add_suffix=''):

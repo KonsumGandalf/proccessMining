@@ -2,6 +2,7 @@ from pm4py.objects.log.util import dataframe_utils
 from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.visualization.dfg import visualizer as dfg_visualizer
 from pm4py.objects.log.obj import EventLog
+import pm4py
 
 import pandas as pd
 import matplotlib
@@ -48,7 +49,7 @@ class EventHandler:
     def read_pickle(self):
         return pd.read_pickle(self.FILE_PATH)
 
-def save_file(file, name: str, session_dir=None, program_dir=None, diagram_type='', df_format='.pkl', add_dir_3=None):
+def save_file(file, name: str, session_dir=None, program_dir=None, diagram_type='', df_format='.pkl', add_dir_3=None, mode=None):
     """
     heuristic nets cant be saved!
     :param file: type str or graphic
@@ -91,6 +92,13 @@ def save_file(file, name: str, session_dir=None, program_dir=None, diagram_type=
             file.to_csv(FILE_NAME)
     else:
         FILE_NAME = os.path.join(FILE_NAME, name+'.svg')
-        dfg_visualizer.save(file, FILE_NAME)
+        match mode:
+            case 'petri_net':
+                pm4py.save_vis_petri_net(file[0], file[1], file[2], FILE_NAME)
+            case 'process_tree':
+                pm4py.save_vis_process_tree(file, FILE_NAME)
+            case 'heuristic_net':
+                pm4py.save_vis_heuristics_net(file, FILE_NAME)
+            case _:  dfg_visualizer.save(file, FILE_NAME)
 
 
