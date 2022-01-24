@@ -91,7 +91,7 @@ def save_file(file, name: str, session_dir=None, program_dir=None, diagram_type=
         else:
             file.to_csv(FILE_NAME)
     else:
-        FILE_NAME = os.path.join(FILE_NAME, name+'.svg')
+        FILE_NAME = os.path.join(FILE_NAME, name+'.png')
         match mode:
             case 'petri_net':
                 pm4py.save_vis_petri_net(file[0], file[1], file[2], FILE_NAME)
