@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+*.pyc
+.idea/
+*.csv
+*.pkl
+*.svg
+/src
