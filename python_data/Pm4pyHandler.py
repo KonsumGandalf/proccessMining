@@ -478,7 +478,7 @@ class Pm4pyHandler:
 
         petri_net = self.inductive_processing(mode_detail='petri_net', variant='imd')
         gviz = self.petri_net_visualization(petri_net)
-        self.save_file(petri_net, filename='petri_net_imd', add_dir_2=io_name, mode='petri_net')
+        self.save_file(gviz, filename='petri_net_imd', add_dir_2=io_name)
 
         self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
                                 heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 3000,
@@ -486,7 +486,7 @@ class Pm4pyHandler:
                                replace=True)
         petri_net = self.heuristic_processing(mode_detail='petri_net')
         gviz = self.petri_net_visualization(petri_net)
-        self.save_file(petri_net, filename='petri_net_3000_3000', add_dir_2=io_name, mode='petri_net')
+        self.save_file(gviz, filename='petri_net_3000_3000', add_dir_2=io_name)
 
         self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
                                 heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 300,
@@ -498,7 +498,7 @@ class Pm4pyHandler:
 
         process_tree = self.inductive_processing(mode_detail='process_tree', variant='imd')
         gviz = self.inductive_visualization(process_tree)
-        self.save_file(process_tree, filename='process_tree', add_dir_2=io_name, mode='process_tree')
+        self.save_file(gviz, filename='process_tree', add_dir_2=io_name)
 
         variant_dfg = 'FREQUENCY'
         dfg = self.dfg_processing(variant=variant_dfg)
