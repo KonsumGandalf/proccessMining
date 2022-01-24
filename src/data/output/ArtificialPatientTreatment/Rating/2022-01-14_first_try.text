@@ -1,0 +1,268 @@
+########################################
+
+The score of heuristic+0-6_3_3: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})
+('Precision: ', 0.9830188679245283)
+('Generalization ', 0.8823975685045107)
+('Simplicity ', 0.8181818181818181)
+
+Conformance_checking: 
+none(Second consult, 'Second consult') : none(Second consult, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 90
+Percentage of anomalous traces 90.0%
+List of regular data: ['patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient26', 'patient28', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 0, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 3, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+The following presents the NOT fitting data. 
+Average cost: 10000.0.
+Number of anomalous traces 10
+Percentage of anomalous traces 10.0%
+List of anomalous data: ['patient0', 'patient9', 'patient15', 'patient25', 'patient27', 'patient29', 'patient35', 'patient42', 'patient52', 'patient95']
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 3, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_cost_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 1, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 3, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_fitness_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 1, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+
+########################################
+
+The score of alpha: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})
+('Precision: ', 0.9830188679245283)
+('Generalization ', 0.8823975685045107)
+('Simplicity ', 0.8181818181818181)
+
+Conformance_checking: 
+none(Second consult, 'Second consult') : none(Second consult, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 90
+Percentage of anomalous traces 90.0%
+List of regular data: ['patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient26', 'patient28', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 0, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+The following presents the NOT fitting data. 
+Average cost: 10000.0.
+Number of anomalous traces 10
+Percentage of anomalous traces 10.0%
+List of anomalous data: ['patient0', 'patient9', 'patient15', 'patient25', 'patient27', 'patient29', 'patient35', 'patient42', 'patient52', 'patient95']
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_cost_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_fitness_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+
+########################################
+
+The score of inductive_imd: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})
+('Precision: ', 0.9830188679245283)
+('Generalization ', 0.8823975685045107)
+('Simplicity ', 0.8181818181818181)
+
+Conformance_checking: 
+none(95d0778f-77e0-434a-9368-ce3d2ab97380, 'Second consult') : none(95d0778f-77e0-434a-9368-ce3d2ab97380, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 90
+Percentage of anomalous traces 90.0%
+List of regular data: ['patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient26', 'patient28', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 0, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 3, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+The following presents the NOT fitting data. 
+Average cost: 10000.0.
+Number of anomalous traces 10
+Percentage of anomalous traces 10.0%
+List of anomalous data: ['patient0', 'patient9', 'patient15', 'patient25', 'patient27', 'patient29', 'patient35', 'patient42', 'patient52', 'patient95']
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 3, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_cost_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 3, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_fitness_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+
+########################################
+
+The score of inductive_imf: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})
+('Precision: ', 0.9830188679245283)
+('Generalization ', 0.8823975685045107)
+('Simplicity ', 0.8181818181818181)
+
+Conformance_checking: 
+none(91562c08-ecd6-4e13-9347-72ebace106b1, 'Second consult') : none(91562c08-ecd6-4e13-9347-72ebace106b1, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 90
+Percentage of anomalous traces 90.0%
+List of regular data: ['patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient26', 'patient28', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 0, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+The following presents the NOT fitting data. 
+Average cost: 10000.0.
+Number of anomalous traces 10
+Percentage of anomalous traces 10.0%
+List of anomalous data: ['patient0', 'patient9', 'patient15', 'patient25', 'patient27', 'patient29', 'patient35', 'patient42', 'patient52', 'patient95']
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_cost_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_fitness_no_fit': 'patient9', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 25, 'traversed_arcs': 25, 'lp_solved': 2, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+
+########################################
+
+The score of heuristic+0-8_30_30: 3.4216127110692685
+('Fitness: ', {'perc_fit_traces': 74.0, 'average_trace_fitness': 0.9688095238095238, 'log_fitness': 0.9714602925809823, 'percentage_of_fitting_traces': 74.0})
+('Precision: ', 0.6690042075736325)
+('Generalization ', 0.8975410493980093)
+('Simplicity ', 1.0)
+
+Conformance_checking: 
+none(Second consult, 'Second consult') (Final consult, 'Final consult') : none(Second consult, 'Second consult') (Final consult, 'Final consult') 
+missing_tokens: 30
+case_list: patient0, patient5, patient6, patient9, patient11, patient15, patient21, patient23, patient25, patient27, patient29, patient33, patient35, patient36, patient40, patient42, patient47, patient52, patient62, patient64, patient78, patient83, patient87, patient94, patient95, patient98
+counter_anomalous_traces: 26
+percentage_anomalous_traces: 26.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 74
+Percentage of anomalous traces 74.0%
+List of regular data: ['patient1', 'patient2', 'patient3', 'patient4', 'patient7', 'patient8', 'patient10', 'patient12', 'patient13', 'patient14', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient22', 'patient24', 'patient26', 'patient28', 'patient30', 'patient31', 'patient32', 'patient34', 'patient37', 'patient38', 'patient39', 'patient41', 'patient43', 'patient44', 'patient45', 'patient46', 'patient48', 'patient49', 'patient50', 'patient51', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient63', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient79', 'patient80', 'patient81', 'patient82', 'patient84', 'patient85', 'patient86', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient96', 'patient97', 'patient99']
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 0, 'visited_states': 7, 'queued_states': 28, 'traversed_arcs': 28, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 30000, 'visited_states': 8, 'queued_states': 31, 'traversed_arcs': 31, 'lp_solved': 2, 'fitness': 0.7692307692307692, 'bwc': 130000}}
+
+The following presents the NOT fitting data. 
+Average cost: 19230.76923076923.
+Number of anomalous traces 26
+Percentage of anomalous traces 26.0%
+List of anomalous data: ['patient0', 'patient5', 'patient6', 'patient9', 'patient11', 'patient15', 'patient21', 'patient23', 'patient25', 'patient27', 'patient29', 'patient33', 'patient35', 'patient36', 'patient40', 'patient42', 'patient47', 'patient52', 'patient62', 'patient64', 'patient78', 'patient83', 'patient87', 'patient94', 'patient95', 'patient98']
+	{'idx_lowest_cost_no_fit': 'patient15', 'lowest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 29, 'traversed_arcs': 29, 'lp_solved': 1, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+	{'idx_highest_cost_no_fit': 'patient9', 'highest_cost': {'cost': 30000, 'visited_states': 8, 'queued_states': 31, 'traversed_arcs': 31, 'lp_solved': 2, 'fitness': 0.7692307692307692, 'bwc': 130000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 30000, 'visited_states': 8, 'queued_states': 31, 'traversed_arcs': 31, 'lp_solved': 2, 'fitness': 0.7692307692307692, 'bwc': 130000}}
+	{'idx_highest_fitness_no_fit': 'patient15', 'highest_cost': {'cost': 10000, 'visited_states': 7, 'queued_states': 29, 'traversed_arcs': 29, 'lp_solved': 1, 'fitness': 0.9230769230769231, 'bwc': 130000}}
+
+
+########################################
+
+The score of inductive_im: 3.109412967527632
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})
+('Precision: ', 0.9840848806366048)
+('Generalization ', 0.8603280868910275)
+('Simplicity ', 0.7599999999999999)
+
+Conformance_checking: 
+percentage_anomalous_traces: 1.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.1.
+Number of anomalous traces 100
+Percentage of anomalous traces 100.0%
+List of regular data: ['patient0', 'patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient9', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient15', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient25', 'patient26', 'patient27', 'patient28', 'patient29', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient35', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient42', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient52', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient95', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 0, 'visited_states': 7, 'queued_states': 28, 'traversed_arcs': 28, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 130001}}
+	{'idx_highest_cost_fit': 'patient9', 'highest_cost': {'cost': 1, 'visited_states': 7, 'queued_states': 26, 'traversed_arcs': 26, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 120001}}
+
+The following presents the NOT fitting data. 
+Average cost: 0.0.
+Number of anomalous traces 1
+Percentage of anomalous traces 1.0%
+List of anomalous data: []
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 1, 'visited_states': 7, 'queued_states': 26, 'traversed_arcs': 26, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 120001}}
+	{'idx_highest_cost_no_fit': 'patient0', 'highest_cost': {'cost': 1, 'visited_states': 7, 'queued_states': 26, 'traversed_arcs': 26, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 120001}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 1, 'visited_states': 7, 'queued_states': 26, 'traversed_arcs': 26, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 120001}}
+	{'idx_highest_fitness_no_fit': 'patient0', 'highest_cost': {'cost': 1, 'visited_states': 7, 'queued_states': 26, 'traversed_arcs': 26, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 120001}}
+
+
+########################################
+
+The score of heuristic+0-9_300_300: 2.6131582175917316
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})
+('Precision: ', 0.22576064908722104)
+('Generalization ', 0.8823975685045107)
+('Simplicity ', 1.0)
+
+Conformance_checking: 
+percentage_anomalous_traces: 1.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 100
+Percentage of anomalous traces 100.0%
+List of regular data: ['patient0', 'patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient9', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient15', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient25', 'patient26', 'patient27', 'patient28', 'patient29', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient35', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient42', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient52', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient95', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient0', 'lowest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+
+The following presents the NOT fitting data. 
+Average cost: 0.0.
+Number of anomalous traces 1
+Percentage of anomalous traces 1.0%
+List of anomalous data: []
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_highest_cost_no_fit': 'patient0', 'highest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_highest_fitness_no_fit': 'patient0', 'highest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+
+
+########################################
+
+The score of heuristic+0-99_3000_3000: 2.6131582175917316
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})
+('Precision: ', 0.22576064908722104)
+('Generalization ', 0.8823975685045107)
+('Simplicity ', 1.0)
+
+Conformance_checking: 
+percentage_anomalous_traces: 1.0%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 0.0.
+Number of anomalous traces 100
+Percentage of anomalous traces 100.0%
+List of regular data: ['patient0', 'patient1', 'patient2', 'patient3', 'patient4', 'patient5', 'patient6', 'patient7', 'patient8', 'patient9', 'patient10', 'patient11', 'patient12', 'patient13', 'patient14', 'patient15', 'patient16', 'patient17', 'patient18', 'patient19', 'patient20', 'patient21', 'patient22', 'patient23', 'patient24', 'patient25', 'patient26', 'patient27', 'patient28', 'patient29', 'patient30', 'patient31', 'patient32', 'patient33', 'patient34', 'patient35', 'patient36', 'patient37', 'patient38', 'patient39', 'patient40', 'patient41', 'patient42', 'patient43', 'patient44', 'patient45', 'patient46', 'patient47', 'patient48', 'patient49', 'patient50', 'patient51', 'patient52', 'patient53', 'patient54', 'patient55', 'patient56', 'patient57', 'patient58', 'patient59', 'patient60', 'patient61', 'patient62', 'patient63', 'patient64', 'patient65', 'patient66', 'patient67', 'patient68', 'patient69', 'patient70', 'patient71', 'patient72', 'patient73', 'patient74', 'patient75', 'patient76', 'patient77', 'patient78', 'patient79', 'patient80', 'patient81', 'patient82', 'patient83', 'patient84', 'patient85', 'patient86', 'patient87', 'patient88', 'patient89', 'patient90', 'patient91', 'patient92', 'patient93', 'patient94', 'patient95', 'patient96', 'patient97', 'patient98', 'patient99']
+	{'idx_lowest_cost_fit': 'patient0', 'lowest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_highest_cost_fit': 'patient0', 'highest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+
+The following presents the NOT fitting data. 
+Average cost: 0.0.
+Number of anomalous traces 1
+Percentage of anomalous traces 1.0%
+List of anomalous data: []
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_highest_cost_no_fit': 'patient0', 'highest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_lowest_fitness_no_fit': 'patient0', 'lowest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+	{'idx_highest_fitness_no_fit': 'patient0', 'highest_cost': {'cost': 0, 'visited_states': 6, 'queued_states': 19, 'traversed_arcs': 55, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80000}}
+
+

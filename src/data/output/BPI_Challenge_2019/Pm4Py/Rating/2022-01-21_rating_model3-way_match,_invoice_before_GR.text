@@ -1,0 +1,88 @@
+########################################
+
+The score of inductive_imd: 3.135067842203277
+('Fitness: ', {'perc_fit_traces': 80.45545493925205, 'average_trace_fitness': 0.989770591742738, 'log_fitness': 0.9886859203567615, 'percentage_of_fitting_traces': 80.45545493925205})
+('Precision: ', 0.8057305107593331)
+('Generalization ', 0.841536837813718)
+('Simplicity ', 0.5909090909090908)
+
+None
+
+
+########################################
+
+The score of heuristic+0-9_300_300: 3.0735346081755535
+('Fitness: ', {'perc_fit_traces': 69.0216382351121, 'average_trace_fitness': 0.9684265241566352, 'log_fitness': 0.965989360682791, 'percentage_of_fitting_traces': 69.0216382351121})
+('Precision: ', 0.8138177293388738)
+('Generalization ', 0.9643380497845958)
+('Simplicity ', 0.4666666666666667)
+
+None
+
+
+########################################
+
+The score of heuristic+0-8_30_30: 2.9164383845874995
+('Fitness: ', {'perc_fit_traces': 46.997669093834446, 'average_trace_fitness': 0.951167500415591, 'log_fitness': 0.9481859673316138, 'percentage_of_fitting_traces': 46.997669093834446})
+('Precision: ', 0.8384138332055313)
+('Generalization ', 0.9051841403458577)
+('Simplicity ', 0.46301369863013697)
+
+None
+
+
+########################################
+
+The score of heuristic+0-99_3000_3000: 2.901585654002736
+('Fitness: ', {'perc_fit_traces': 7.033973473050187, 'average_trace_fitness': 0.8885883114813402, 'log_fitness': 0.8920461337754747, 'percentage_of_fitting_traces': 7.033973473050187})
+('Precision: ', 0.9089472164863889)
+('Generalization ', 0.963922862062699)
+('Simplicity ', 0.5483870967741935)
+
+None
+
+
+########################################
+
+The score of inductive_imf: 2.6783808361596826
+('Fitness: ', {'perc_fit_traces': 99.75865838816807, 'average_trace_fitness': 0.9999045773160672, 'log_fitness': 0.9998208241089264, 'percentage_of_fitting_traces': 99.75865838816807})
+('Precision: ', 0.34907538400232485)
+('Generalization ', 0.8785260153397209)
+('Simplicity ', 0.452054794520548)
+
+None
+
+
+########################################
+
+The score of heuristic+0-6_3_3: 2.567096724218078
+('Fitness: ', {'perc_fit_traces': 12.970564574351782, 'average_trace_fitness': 0.9185656484077943, 'log_fitness': 0.9160579936481733, 'percentage_of_fitting_traces': 12.970564574351782})
+('Precision: ', 0.8569172072525242)
+('Generalization ', 0.7547867256087888)
+('Simplicity ', 0.43188405797101453)
+
+None
+
+
+########################################
+
+The score of inductive_im: 2.2420876906418323
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})
+('Precision: ', 0.35416774947196694)
+('Generalization ', 0.8858439177780525)
+('Simplicity ', 0.4970760233918129)
+
+None
+
+
+########################################
+
+The score of alpha: 2.0628423608892286
+('Fitness: ', {'perc_fit_traces': 0.0, 'average_trace_fitness': 0.26702641111536635, 'log_fitness': 0.2568762737837254, 'percentage_of_fitting_traces': 0.0})
+('Precision: ', 0.6899398770200679)
+('Generalization ', 0.837346659972632)
+('Simplicity ', 0.40458015267175573)
+
+None
+
+

@@ -1,0 +1,56 @@
+
+The score of heuristic+0-6_3_3: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+
+The score of alpha: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+
+The score of inductive_imd: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+
+The score of inductive_imf: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+
+The score of heuristic+0-8_30_30: 3.4216127110692685
+('Fitness: ', {'perc_fit_traces': 74.0, 'average_trace_fitness': 0.9688095238095238, 'log_fitness': 0.9714602925809823, 'percentage_of_fitting_traces': 74.0})`
+('Precision: ', 0.6690042075736325)`
+('Generalization ', 0.8975410493980093)`
+('Simplicity ', 1.0)`
+
+
+The score of inductive_im: 3.109412967527632
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.9840848806366048)`
+('Generalization ', 0.8603280868910275)`
+('Simplicity ', 0.7599999999999999)`
+
+
+The score of heuristic+0-9_300_300: 2.6131582175917316
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.22576064908722104)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 1.0)`
+
+
+The score of heuristic+0-99_3000_3000: 2.6131582175917316
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.22576064908722104)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 1.0)`
+

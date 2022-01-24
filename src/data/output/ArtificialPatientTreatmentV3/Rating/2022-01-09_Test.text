@@ -1,0 +1,180 @@
+########################################
+
+The score of inductive_imd: 3.3519134100018224
+('Fitness: ', {'perc_fit_traces': 68.51851851851852, 'average_trace_fitness': 0.954626739001739, 'log_fitness': 0.9620864918278951, 'percentage_of_fitting_traces': 68.51851851851852})`
+('Precision: ', 0.898473282442748)`
+('Generalization ', 0.8538914494812957)`
+('Simplicity ', 0.7777777777777779)`
+
+Conformance_checking: 
+none(96671cc0-9fd7-4bff-bbb2-7bb1e2dc7fd1, 'Second consult') : none(96671cc0-9fd7-4bff-bbb2-7bb1e2dc7fd1, 'Second consult') 
+missing_tokens: 49
+case_list: patient0, patient5, patient6, patient9, patient11, patient15, patient21, patient23, patient25, patient27, patient29, patient33, patient35, patient36, patient40, patient42, patient47, patient52, patient62, patient64, patient78, patient83, patient87, patient94, patient95, patient98, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 34
+percentage_anomalous_traces: 31.48148148148148%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 4.0.
+Number of anomalous traces 74
+Percentage of anomalous traces 68.51851851851852%
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 4, 'visited_states': 11, 'queued_states': 34, 'traversed_arcs': 34, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140004}}
+	{'idx_highest_cost_fit': 'patient2', 'highest_cost': {'cost': 4, 'visited_states': 11, 'queued_states': 34, 'traversed_arcs': 34, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 140004}}
+
+The following presents the NOT fitting data. 
+Average cost: 13826.85294117647.
+Number of anomalous traces 34
+Percentage of anomalous traces 31.48148148148148%
+	{'idx_lowest_cost_no_fit': 'patient5', 'lowest_cost': {'cost': 10003, 'visited_states': 11, 'queued_states': 35, 'traversed_arcs': 35, 'lp_solved': 1, 'fitness': 0.9285714285714286, 'bwc': 140004}}
+	{'idx_highest_cost_no_fit': 'patient101', 'highest_cost': {'cost': 40004, 'visited_states': 12, 'queued_states': 30, 'traversed_arcs': 30, 'lp_solved': 11, 'fitness': 0.6666666666666667, 'bwc': 120004}}
+	{'idx_lowest_fitness_no_fit': 'patient101', 'lowest_cost': {'cost': 40004, 'visited_states': 12, 'queued_states': 30, 'traversed_arcs': 30, 'lp_solved': 11, 'fitness': 0.6666666666666667, 'bwc': 120004}}
+	{'idx_highest_fitness_no_fit': 'patient5', 'highest_cost': {'cost': 10003, 'visited_states': 11, 'queued_states': 35, 'traversed_arcs': 35, 'lp_solved': 1, 'fitness': 0.9285714285714286, 'bwc': 140004}}
+
+
+########################################
+
+The score of heuristic+0-6_3_3: 3.1978413909626893
+('Fitness: ', {'perc_fit_traces': 83.33333333333333, 'average_trace_fitness': 0.976836203919537, 'log_fitness': 0.9798507462686568, 'percentage_of_fitting_traces': 83.33333333333333})`
+('Precision: ', 0.9802955665024631)`
+('Generalization ', 0.6372888155953484)`
+('Simplicity ', 0.6744186046511628)`
+
+Conformance_checking: 
+none(Second consult, 'Second consult') : none(Second consult, 'Second consult') 
+missing_tokens: 27
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 18
+percentage_anomalous_traces: 16.666666666666664%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 2.6444444444444444.
+Number of anomalous traces 90
+Percentage of anomalous traces 83.33333333333334%
+	{'idx_lowest_cost_fit': 'patient5', 'lowest_cost': {'cost': 1, 'visited_states': 8, 'queued_states': 31, 'traversed_arcs': 31, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80002}}
+	{'idx_highest_cost_fit': 'patient2', 'highest_cost': {'cost': 3, 'visited_states': 10, 'queued_states': 36, 'traversed_arcs': 36, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80002}}
+
+The following presents the NOT fitting data. 
+Average cost: 14446.777777777777.
+Number of anomalous traces 18
+Percentage of anomalous traces 16.666666666666664%
+	{'idx_lowest_cost_no_fit': 'patient0', 'lowest_cost': {'cost': 10001, 'visited_states': 8, 'queued_states': 31, 'traversed_arcs': 31, 'lp_solved': 1, 'fitness': 0.8571428571428572, 'bwc': 70002}}
+	{'idx_highest_cost_no_fit': 'patient106', 'highest_cost': {'cost': 30002, 'visited_states': 14, 'queued_states': 41, 'traversed_arcs': 46, 'lp_solved': 26, 'fitness': 0.5714285714285714, 'bwc': 70002}}
+	{'idx_lowest_fitness_no_fit': 'patient106', 'lowest_cost': {'cost': 30002, 'visited_states': 14, 'queued_states': 41, 'traversed_arcs': 46, 'lp_solved': 26, 'fitness': 0.5714285714285714, 'bwc': 70002}}
+	{'idx_highest_fitness_no_fit': 'patient105', 'highest_cost': {'cost': 10002, 'visited_states': 10, 'queued_states': 37, 'traversed_arcs': 37, 'lp_solved': 6, 'fitness': 0.875, 'bwc': 80002}}
+
+
+########################################
+
+The score of heuristic+0-8_30_30: 2.860321743314387
+('Fitness: ', {'perc_fit_traces': 68.51851851851852, 'average_trace_fitness': 0.9587495323606435, 'log_fitness': 0.9640661670073435, 'percentage_of_fitting_traces': 68.51851851851852})`
+('Precision: ', 0.7038123167155426)`
+('Generalization ', 0.5998795758309217)`
+('Simplicity ', 0.7333333333333333)`
+
+Conformance_checking: 
+none(Second consult, 'Second consult') (Final consult, 'Final consult') : none(Second consult, 'Second consult') (Final consult, 'Final consult') 
+missing_tokens: 45
+case_list: patient0, patient5, patient6, patient9, patient11, patient15, patient21, patient23, patient25, patient27, patient29, patient33, patient35, patient36, patient40, patient42, patient47, patient52, patient62, patient64, patient78, patient83, patient87, patient94, patient95, patient98, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 34
+percentage_anomalous_traces: 31.48148148148148%
+
+Alignments: 
+
+The following presents the fitting data. Average cost: 1.0.
+Number of anomalous traces 74
+Percentage of anomalous traces 68.51851851851852%
+	{'idx_lowest_cost_fit': 'patient1', 'lowest_cost': {'cost': 1, 'visited_states': 8, 'queued_states': 35, 'traversed_arcs': 35, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80002}}
+	{'idx_highest_cost_fit': 'patient2', 'highest_cost': {'cost': 1, 'visited_states': 8, 'queued_states': 36, 'traversed_arcs': 36, 'lp_solved': 1, 'fitness': 1.0, 'bwc': 80002}}
+
+The following presents the NOT fitting data. 
+Average cost: 20295.147058823528.
+Number of anomalous traces 34
+Percentage of anomalous traces 31.48148148148148%
+	{'idx_lowest_cost_no_fit': 'patient15', 'lowest_cost': {'cost': 10001, 'visited_states': 8, 'queued_states': 38, 'traversed_arcs': 38, 'lp_solved': 1, 'fitness': 0.8571428571428572, 'bwc': 70002}}
+	{'idx_highest_cost_no_fit': 'patient106', 'highest_cost': {'cost': 40002, 'visited_states': 23, 'queued_states': 80, 'traversed_arcs': 93, 'lp_solved': 54, 'fitness': 0.4285714285714286, 'bwc': 70002}}
+	{'idx_lowest_fitness_no_fit': 'patient106', 'lowest_cost': {'cost': 40002, 'visited_states': 23, 'queued_states': 80, 'traversed_arcs': 93, 'lp_solved': 54, 'fitness': 0.4285714285714286, 'bwc': 70002}}
+	{'idx_highest_fitness_no_fit': 'patient15', 'highest_cost': {'cost': 10001, 'visited_states': 8, 'queued_states': 38, 'traversed_arcs': 38, 'lp_solved': 1, 'fitness': 0.8571428571428572, 'bwc': 70002}}
+
+
+########################################
+
+The score of alpha: 2.6734718515764984
+('Fitness: ', {'perc_fit_traces': 0.0, 'average_trace_fitness': 0.724333035791368, 'log_fitness': 0.7266504551976612, 'percentage_of_fitting_traces': 0.0})`
+('Precision: ', 1.0)`
+('Generalization ', 0.8345355026387645)`
+('Simplicity ', 0.47619047619047616)`
+
+Conformance_checking: 
+none(First consult, 'First consult') (Blood test, 'Blood test') (Second consult, 'Second consult') : none(First consult, 'First consult') (Blood test, 'Blood test') (Second consult, 'Second consult') 
+missing_tokens: 524
+case_list: patient0, patient1, patient2, patient3, patient4, patient5, patient6, patient7, patient8, patient9, patient10, patient11, patient12, patient13, patient14, patient15, patient16, patient17, patient18, patient19, patient20, patient21, patient22, patient23, patient24, patient25, patient26, patient27, patient28, patient29, patient30, patient31, patient32, patient33, patient34, patient35, patient36, patient37, patient38, patient39, patient40, patient41, patient42, patient43, patient44, patient45, patient46, patient47, patient48, patient49, patient50, patient51, patient52, patient53, patient54, patient55, patient56, patient57, patient58, patient59, patient60, patient61, patient62, patient63, patient64, patient65, patient66, patient67, patient68, patient69, patient70, patient71, patient72, patient73, patient74, patient75, patient76, patient77, patient78, patient79, patient80, patient81, patient82, patient83, patient84, patient85, patient86, patient87, patient88, patient89, patient90, patient91, patient92, patient93, patient94, patient95, patient96, patient97, patient98, patient99, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 108
+percentage_anomalous_traces: 100.0%
+
+None
+
+########################################
+
+The score of heuristic+0-9_300_300: 2.506041011720249
+('Fitness: ', {'perc_fit_traces': 0.0, 'average_trace_fitness': 0.5313271604938271, 'log_fitness': 0.5217513069454817, 'percentage_of_fitting_traces': 0.0})`
+('Precision: ', 0.40823589222165735)`
+('Generalization ', 0.8345355026387645)`
+('Simplicity ', 1.0)`
+
+Conformance_checking: 
+none(Blood test, 'Blood test') : none(Blood test, 'Blood test') 
+missing_tokens: 200
+case_list: patient0, patient1, patient2, patient3, patient4, patient5, patient6, patient7, patient8, patient9, patient10, patient11, patient12, patient13, patient14, patient15, patient16, patient17, patient18, patient19, patient20, patient21, patient22, patient23, patient24, patient25, patient26, patient27, patient28, patient29, patient30, patient31, patient32, patient33, patient34, patient35, patient36, patient37, patient38, patient39, patient40, patient41, patient42, patient43, patient44, patient45, patient46, patient47, patient48, patient49, patient50, patient51, patient52, patient53, patient54, patient55, patient56, patient57, patient58, patient59, patient60, patient61, patient62, patient63, patient64, patient65, patient66, patient67, patient68, patient69, patient70, patient71, patient72, patient73, patient74, patient75, patient76, patient77, patient78, patient79, patient80, patient81, patient82, patient83, patient84, patient85, patient86, patient87, patient88, patient89, patient90, patient91, patient92, patient93, patient94, patient95, patient96, patient97, patient98, patient99, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 108
+percentage_anomalous_traces: 100.0%
+
+None
+
+########################################
+
+The score of heuristic+0-99_3000_3000: 2.506041011720249
+('Fitness: ', {'perc_fit_traces': 0.0, 'average_trace_fitness': 0.5313271604938271, 'log_fitness': 0.5217513069454817, 'percentage_of_fitting_traces': 0.0})`
+('Precision: ', 0.40823589222165735)`
+('Generalization ', 0.8345355026387645)`
+('Simplicity ', 1.0)`
+
+Conformance_checking: 
+none(Blood test, 'Blood test') : none(Blood test, 'Blood test') 
+missing_tokens: 200
+case_list: patient0, patient1, patient2, patient3, patient4, patient5, patient6, patient7, patient8, patient9, patient10, patient11, patient12, patient13, patient14, patient15, patient16, patient17, patient18, patient19, patient20, patient21, patient22, patient23, patient24, patient25, patient26, patient27, patient28, patient29, patient30, patient31, patient32, patient33, patient34, patient35, patient36, patient37, patient38, patient39, patient40, patient41, patient42, patient43, patient44, patient45, patient46, patient47, patient48, patient49, patient50, patient51, patient52, patient53, patient54, patient55, patient56, patient57, patient58, patient59, patient60, patient61, patient62, patient63, patient64, patient65, patient66, patient67, patient68, patient69, patient70, patient71, patient72, patient73, patient74, patient75, patient76, patient77, patient78, patient79, patient80, patient81, patient82, patient83, patient84, patient85, patient86, patient87, patient88, patient89, patient90, patient91, patient92, patient93, patient94, patient95, patient96, patient97, patient98, patient99, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 108
+percentage_anomalous_traces: 100.0%
+
+None
+
+########################################
+
+The score of inductive_imf: 2.3457917400421286
+('Fitness: ', {'perc_fit_traces': 0.0, 'average_trace_fitness': 0.8918771614748804, 'log_fitness': 0.8943734915571031, 'percentage_of_fitting_traces': 0.0})`
+('Precision: ', 0.4747386759581882)`
+('Generalization ', 0.7711570674926111)`
+('Simplicity ', 0.6533333333333333)`
+
+Conformance_checking: 
+none(1c1e9a01-a557-47c5-8e37-eca4f3f37040, 'Blood test') (99a1fb0d-f963-4be0-afdd-2efaf4d15357, 'Second consult') (88a6a5c2-5175-4226-b8b2-d495110d0434, 'Final consult') : none(1c1e9a01-a557-47c5-8e37-eca4f3f37040, 'Blood test') (99a1fb0d-f963-4be0-afdd-2efaf4d15357, 'Second consult') (88a6a5c2-5175-4226-b8b2-d495110d0434, 'Final consult') 
+missing_tokens: 182
+case_list: patient0, patient1, patient2, patient3, patient4, patient5, patient6, patient7, patient8, patient9, patient10, patient11, patient12, patient13, patient14, patient15, patient16, patient17, patient18, patient19, patient20, patient21, patient22, patient23, patient24, patient25, patient26, patient27, patient28, patient29, patient30, patient31, patient32, patient33, patient34, patient35, patient36, patient37, patient38, patient39, patient40, patient41, patient42, patient43, patient44, patient45, patient46, patient47, patient48, patient49, patient50, patient51, patient52, patient53, patient54, patient55, patient56, patient57, patient58, patient59, patient60, patient61, patient62, patient63, patient64, patient65, patient66, patient67, patient68, patient69, patient70, patient71, patient72, patient73, patient74, patient75, patient76, patient77, patient78, patient79, patient80, patient81, patient82, patient83, patient84, patient85, patient86, patient87, patient88, patient89, patient90, patient91, patient92, patient93, patient94, patient95, patient96, patient97, patient98, patient99, patient100, patient101, patient102, patient103, patient104, patient105, patient106, patient107
+counter_anomalous_traces: 108
+percentage_anomalous_traces: 100.0%
+
+None
+
+########################################
+
+The score of inductive_im: 2.3271923545862157
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.4336981420208704)`
+('Generalization ', 0.7218275458986787)`
+('Simplicity ', 0.6666666666666666)`
+
+Conformance_checking: 
+percentage_anomalous_traces: 0.9259259259259258%
+
+None
+

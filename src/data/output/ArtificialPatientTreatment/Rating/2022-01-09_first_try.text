@@ -1,0 +1,108 @@
+
+The score of heuristic+0-6_3_3: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+Conformance_checking: 
+none(Second consult, 'Second consult') : none(Second consult, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+
+
+The score of alpha: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+Conformance_checking: 
+none(Second consult, 'Second consult') : none(Second consult, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+
+
+The score of inductive_imd: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+Conformance_checking: 
+none(cdf86d20-daef-4b94-9e2d-296967d51f41, 'Second consult') : none(cdf86d20-daef-4b94-9e2d-296967d51f41, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+
+
+The score of inductive_imf: 3.628295224307827
+('Fitness: ', {'perc_fit_traces': 90.0, 'average_trace_fitness': 0.9888888888888888, 'log_fitness': 0.98989898989899, 'percentage_of_fitting_traces': 90.0})`
+('Precision: ', 0.9830188679245283)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 0.8181818181818181)`
+
+Conformance_checking: 
+none(fbd1f762-6787-46fe-90e3-0cdc279e0b62, 'Second consult') : none(fbd1f762-6787-46fe-90e3-0cdc279e0b62, 'Second consult') 
+missing_tokens: 10
+case_list: patient0, patient9, patient15, patient25, patient27, patient29, patient35, patient42, patient52, patient95
+counter_anomalous_traces: 10
+percentage_anomalous_traces: 10.0%
+
+
+
+The score of heuristic+0-8_30_30: 3.4216127110692685
+('Fitness: ', {'perc_fit_traces': 74.0, 'average_trace_fitness': 0.9688095238095238, 'log_fitness': 0.9714602925809823, 'percentage_of_fitting_traces': 74.0})`
+('Precision: ', 0.6690042075736325)`
+('Generalization ', 0.8975410493980093)`
+('Simplicity ', 1.0)`
+
+Conformance_checking: 
+none(Second consult, 'Second consult') (Final consult, 'Final consult') : none(Second consult, 'Second consult') (Final consult, 'Final consult') 
+missing_tokens: 30
+case_list: patient0, patient5, patient6, patient9, patient11, patient15, patient21, patient23, patient25, patient27, patient29, patient33, patient35, patient36, patient40, patient42, patient47, patient52, patient62, patient64, patient78, patient83, patient87, patient94, patient95, patient98
+counter_anomalous_traces: 26
+percentage_anomalous_traces: 26.0%
+
+
+
+The score of inductive_im: 3.109412967527632
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.9840848806366048)`
+('Generalization ', 0.8603280868910275)`
+('Simplicity ', 0.7599999999999999)`
+
+Conformance_checking: 
+percentage_anomalous_traces: 1.0%
+
+
+
+The score of heuristic+0-9_300_300: 2.6131582175917316
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.22576064908722104)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 1.0)`
+
+Conformance_checking: 
+percentage_anomalous_traces: 1.0%
+
+
+
+The score of heuristic+0-99_3000_3000: 2.6131582175917316
+('Fitness: ', {'perc_fit_traces': 100.0, 'average_trace_fitness': 1.0, 'log_fitness': 1.0, 'percentage_of_fitting_traces': 100.0})`
+('Precision: ', 0.22576064908722104)`
+('Generalization ', 0.8823975685045107)`
+('Simplicity ', 1.0)`
+
+Conformance_checking: 
+percentage_anomalous_traces: 1.0%
+
+
