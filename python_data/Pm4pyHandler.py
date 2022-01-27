@@ -492,9 +492,9 @@ class Pm4pyHandler:
 
     def local_visualization(self, io_name, inductive_variant='', alpha=False, heu_set=(), pareto_log=False):
         if pareto_log:
-            petri_net = self.inductive_processing(mode_detail='petri_net', variant='imd')
+            petri_net = self.inductive_processing(mode_detail='petri_net', variant=inductive_variant)
             gviz = self.petri_net_visualization(petri_net)
-            self.save_file(gviz, filename=f'pareto_petri_net_imd', add_dir_2=io_name)
+            self.save_file(gviz, filename=f'pareto_petri_net_{inductive_variant}', add_dir_2=io_name)
         else:
             if inductive_variant:
                 petri_net = self.inductive_processing(mode_detail='petri_net', variant=inductive_variant)
@@ -517,16 +517,15 @@ class Pm4pyHandler:
                 except UnboundLocalError:
                     print('petri_net failed due to the high MIN_ACT')
 
-            process_tree = self.inductive_processing(mode_detail='process_tree', variant=inductive_variant)
-            gviz = self.inductive_visualization(process_tree)
-            self.save_file(gviz, filename='process_tree', add_dir_2=io_name)
+        process_tree = self.inductive_processing(mode_detail='process_tree', variant=inductive_variant)
+        gviz = self.inductive_visualization(process_tree)
+        self.save_file(gviz, filename='process_tree', add_dir_2=io_name)
 
-            variant_dfg = 'FREQUENCY'
-            dfg = self.dfg_processing(variant=variant_dfg)
-            gviz = self.dfg_visualization(dfg)
-            self.save_file(gviz, filename='dfg', add_dir_2=io_name)
-            print(1)
-            self.bpmn_dealer(io_name, process_tree)
+        variant_dfg = 'FREQUENCY'
+        dfg = self.dfg_processing(variant=variant_dfg)
+        gviz = self.dfg_visualization(dfg)
+        self.save_file(gviz, filename='dfg', add_dir_2=io_name)
+        self.bpmn_dealer(io_name, process_tree)
 
 
 
