@@ -130,6 +130,9 @@ class Pm4pyHandler:
         self.parameters = self.parameters | parameters                                   
         """
 
+    def update_log(self, log) -> None:
+        self.log = log
+
     def update_variant(self, variant) -> None:
         """
         :param variant: Options: ['FREQUENCY', 'PERFORMANCE']
@@ -487,38 +490,43 @@ class Pm4pyHandler:
         self.save_file(gviz2, filename=io_name + '_process_tree2', add_dir_2=io_name, mode='bpmn')
 
 
-    def local_visualization(self, io_name):
+    def local_visualization(self, io_name, inductive_variant='', alpha=False, heu_set=(), pareto_log=False):
+        if pareto_log:
+            petri_net = self.inductive_processing(mode_detail='petri_net', variant='imd')
+            gviz = self.petri_net_visualization(petri_net)
+            self.save_file(gviz, filename=f'pareto_petri_net_imd', add_dir_2=io_name)
+        else:
+            if inductive_variant:
+                petri_net = self.inductive_processing(mode_detail='petri_net', variant=inductive_variant)
+                gviz = self.petri_net_visualization(petri_net)
+                self.save_file(gviz, filename=f'petri_net_{inductive_variant}', add_dir_2=io_name)
+            if alpha:
+                petri_net = self.alpha_processing('base')
+                gviz = self.petri_net_visualization(petri_net)
+                self.save_file(gviz, filename='petri_net_alpha', add_dir_2=io_name)
+            if len(heu_set):
+                try:
+                    print(heu_set)
+                    self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: heu_set[0],
+                                        heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: heu_set[1],
+                                        heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: heu_set[2]},
+                                       replace=True)
+                    petri_net = self.heuristic_processing(mode_detail='petri_net')
+                    gviz = self.petri_net_visualization(petri_net)
+                    self.save_file(gviz, filename=f'petri_net_{heu_set[1]}_{heu_set[2]}', add_dir_2=io_name)
+                except UnboundLocalError:
+                    print('petri_net failed due to the high MIN_ACT')
 
-        petri_net = self.inductive_processing(mode_detail='petri_net', variant='imd')
-        gviz = self.petri_net_visualization(petri_net)
-        self.save_file(gviz, filename='petri_net_imd', add_dir_2=io_name)
+            process_tree = self.inductive_processing(mode_detail='process_tree', variant=inductive_variant)
+            gviz = self.inductive_visualization(process_tree)
+            self.save_file(gviz, filename='process_tree', add_dir_2=io_name)
 
-        self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
-                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 3000,
-                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: 3000},
-                               replace=True)
-        petri_net = self.heuristic_processing(mode_detail='petri_net')
-        gviz = self.petri_net_visualization(petri_net)
-        self.save_file(gviz, filename='petri_net_3000_3000', add_dir_2=io_name)
-
-        self.update_parameters({heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
-                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 300,
-                                heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: 300},
-                               replace=True)
-        heuristic_net = self.heuristic_processing()
-        gviz = self.heuristic_visualization(heuristic_net)
-        self.save_file(heuristic_net, filename='heuristic_net_300_300', add_dir_2=io_name, mode='heuristic_net')
-
-        process_tree = self.inductive_processing(mode_detail='process_tree', variant='imd')
-        gviz = self.inductive_visualization(process_tree)
-        self.save_file(gviz, filename='process_tree', add_dir_2=io_name)
-
-        variant_dfg = 'FREQUENCY'
-        dfg = self.dfg_processing(variant=variant_dfg)
-        gviz = self.dfg_visualization(dfg)
-        self.save_file(gviz, filename='dfg', add_dir_2=io_name)
-        print(1)
-        self.bpmn_dealer(io_name, process_tree)
+            variant_dfg = 'FREQUENCY'
+            dfg = self.dfg_processing(variant=variant_dfg)
+            gviz = self.dfg_visualization(dfg)
+            self.save_file(gviz, filename='dfg', add_dir_2=io_name)
+            print(1)
+            self.bpmn_dealer(io_name, process_tree)
 
 
 
@@ -877,6 +885,9 @@ class Pm4pyHandler:
             return self.search_best_parameters_heuristic_recursive(multiplier, cur_act, max_act, cur_dfg, max_dfg,
                                                               (cur_score, cur_act, cur_dfg))
 
+    def apply_pareto_principle(self, percentage_to_hold=0.2):
+        from pm4py.algo.filtering.log.variants import variants_filter
+        return variants_filter.filter_log_variants_percentage(self.log, percentage=percentage_to_hold)
 
 """elif type(model) == pm4py.objects.heuristics_net.obj.HeuristicsNet:
 

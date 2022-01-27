@@ -18,10 +18,12 @@ cum_value_for_stat = 0
 
 
 def variant_helper(event_log, df, io_name):
+    from pm4py.algo.filtering.log.variants import variants_filter
+    print(variants_filter.get_variants(event_log))
     FRAME_LENGTH = 100
     size = (30, 5)
     LogHandler1 = LogHandler(log=event_log, mode='variant', frame_length=FRAME_LENGTH, dataframe=df)
-    variant_native, variant_dataframe, dataframe_extended = LogHandler1.groupby_func(0, 'exact', display_df=False)
+    variant_native, variant_dataframe, dataframe_extended = LogHandler1.groupby_func(0, 'exact', display_df=True)
 
     PresentationHandler1 = PltPresent(data=variant_native, mode_list=['plt'], col1='index_format', col2='percentage',
                                       title='Top 100 values - bar chart of variants percentage', x_label='variant', y_label='count'
@@ -80,8 +82,20 @@ def variant_helper(event_log, df, io_name):
 
 
 
+
+
+
 def for_all_categories():
-    for cat_str in list_case_cat:
+
+    """The first list applies the unadjusted event log"""
+    parameter_list = [
+        ('imd',False, (0.9, 300, 300), False),
+        ('imd',False, (0.9, 300, 300), False),
+        ('imd',False, (0.9, 300, 300), False),
+        ('imd',False, (0.9, 300, 300), False)
+    ]
+
+    """for idx,cat_str in enumerate(list_case_cat):
         io_name = cat_str.replace(" ", "_")
         event_handler = EventHandler(additional_path=SESSION_DIR, data_name=f'{io_name}.pkl')
         df = event_handler.read_pickle()
@@ -89,8 +103,25 @@ def for_all_categories():
         pmHandler = Pm4pyHandler(event_log, session_dir=SESSION_DIR, format_img='svg')
         # pmHandler.rating_best_model(output_full=True, file_name='rating_model', session_dir=SESSION_DIR,add_suffix=io_name)
         # pmHandler.visualize_diagram(session_dir=SESSION_DIR,add_suffix=io_name, add_dir_2=io_name)
-        variant_helper(event_log, df, io_name+'test')
-        # pmHandler.local_visualization(io_name)
+        # variant_helper(event_log_pareto_principle, df, io_name+'_pareto')
+        # variant_helper(event_log, df, io_name+'_unadjusted')
+        # pmHandler.local_visualization(io_name+'_unadjusted')
+
+        # event_log_pareto_principle = pmHandler.apply_pareto_principle()
+        # df_pareto = log_converter.apply(event_log_pareto_principle, variant=log_converter.TO_DATA_FRAME)
+        # pmHandler.update_log(event_log_pareto_principle)
+        # save_file(df_pareto, session_dir=SESSION_DIR, name=io_name, program_dir='cache', add_dir_3='pareto_principle')
+        pmHandler.local_visualization(io_name=io_name, inductive_variant=parameter_list[idx][0], heu_set=parameter_list[idx][2])"""
+
+    for cat_str in list_case_cat:
+        io_name = cat_str.replace(" ", "_")
+        event_handler = EventHandler(additional_path=f'{SESSION_DIR}/pkl/pareto_principle', data_name=f'{io_name}.pkl')
+        df = event_handler.read_pickle()
+        event_log = log_converter.apply(df, variant=log_converter.TO_EVENT_LOG)
+        pmHandler = Pm4pyHandler(event_log, session_dir=SESSION_DIR, format_img='svg')
+        pmHandler.local_visualization(io_name=io_name+'_pareto', pareto_log=True)
+
+    """The second list applies the pareto principle to event log"""
 
 def main():
     for_all_categories()

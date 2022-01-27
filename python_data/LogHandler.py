@@ -11,6 +11,7 @@ import pandas as pd
 
 class LogHandler:
     frame_length = 100
+    varients_number = 0
 
     def __init__(self, log, mode: str, frame_length: int, dataframe=None):
         if frame_length:
@@ -32,7 +33,7 @@ class LogHandler:
         variants_count = case_statistics.get_variant_statistics(log=self.log)
         variants_count = sorted(variants_count, key=lambda x: x['count'], reverse=True)
         # variants as DataFrame - just first 100 entries
-        variants_df = pd.DataFrame.from_records(variants_count).head(self.frame_length)
+        variants_df = pd.DataFrame.from_records(variants_count)
         variants_df['frequency'] = [math.log(i, 2) for i in variants_df['count']]
         variants_df['percentage'] = [(i/len(self.log))*100 for i in variants_df['count']]
 
@@ -121,11 +122,9 @@ class LogHandler:
             variant_dataframe = variant_dataframe.loc[variant_dataframe['activity_list'] == exact_variant]
 
         if display_df:
+            from math import floor
+            idx_floored = floor(self.varients_number * 0.2)
+            print(idx_floored)
             print('#####\n#\t#\n#####\n'
-                  'In the following the dataframes variant_dataframe and dataframe_extended '
-                  'are displayed: ')
-            pd.set_option("display.max_columns", 6)
-            display(variant_dataframe_native)
-            display(variant_dataframe)
-            display(dataframe_extended)
+                  f"Pareto principle is applicable {(variant_dataframe_native['cum_percentage'][idx_floored]>80)=} its {variant_dataframe_native['cum_percentage'][idx_floored]}")
         return variant_dataframe_native.head(self.frame_length), variant_dataframe.head(self.frame_length), dataframe_extended.head(self.frame_length)
