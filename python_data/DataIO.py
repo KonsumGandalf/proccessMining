@@ -99,6 +99,9 @@ def save_file(file, name: str, session_dir=None, program_dir=None, diagram_type=
                 pm4py.save_vis_process_tree(file, FILE_NAME)
             case 'heuristic_net':
                 pm4py.save_vis_heuristics_net(file, FILE_NAME)
+            case 'bpmn':
+                print(2)
+                pm4py.save_vis_bpmn(file, FILE_NAME)
             case _:  dfg_visualizer.save(file, FILE_NAME)
 
 

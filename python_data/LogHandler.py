@@ -34,6 +34,15 @@ class LogHandler:
         # variants as DataFrame - just first 100 entries
         variants_df = pd.DataFrame.from_records(variants_count).head(self.frame_length)
         variants_df['frequency'] = [math.log(i, 2) for i in variants_df['count']]
+        variants_df['percentage'] = [(i/len(self.log))*100 for i in variants_df['count']]
+
+        list_cum = []
+        for idx in range(len(variants_df['percentage'])):
+            if idx-1 >= 0:
+                list_cum.append(variants_df['percentage'][idx] + list_cum[idx-1])
+            else:
+                list_cum.append(variants_df['percentage'][idx])
+        variants_df['cum_percentage'] = list_cum
         return variants_df
 
     def apply(self, log = None, mode: str = '', frame_length: int = 0):
@@ -85,7 +94,7 @@ class LogHandler:
 
         # Sorts the dataframe due to the activity duration
         variant_dataframe[col_name_new] = [i.total_seconds() for i in variant_dataframe[col_name_old]]
-        variant_dataframe = variant_dataframe.sort_values([col_name_new], ascending=False)
+        variant_dataframe = variant_dataframe.sort_values(['activity'], ascending=False)
 
         variant_dataframe['duration'] = [i.total_seconds() for i in variant_dataframe['delta_start_time']]
         variant_dataframe['caseID'] = variant_dataframe.index
@@ -102,7 +111,10 @@ class LogHandler:
         )
 
         # Sorts the dataframe due to the activity duration
-        dataframe_extended = dataframe_extended.sort_values(['avg_duration'], ascending=False)
+        dataframe_extended['sum_duration'] = [dataframe_extended['avg_duration'][idx]*dataframe_extended['cases'][idx] for idx in range(len(dataframe_extended))]
+        dataframe_extended = dataframe_extended.sort_values(['cases'], ascending=False)
+        dataframe_extended['variant'] = dataframe_extended.index
+        dataframe_extended = dataframe_extended.set_index(pd.Series([i for i in range(len(dataframe_extended.index))]))
 
         if match_type == 'exact':
             exact_variant = filter_attribute.replace(',', ', ')
@@ -112,6 +124,8 @@ class LogHandler:
             print('#####\n#\t#\n#####\n'
                   'In the following the dataframes variant_dataframe and dataframe_extended '
                   'are displayed: ')
+            pd.set_option("display.max_columns", 6)
+            display(variant_dataframe_native)
             display(variant_dataframe)
-            display(variant_dataframe)
-        return variant_dataframe_native, variant_dataframe, dataframe_extended
+            display(dataframe_extended)
+        return variant_dataframe_native.head(self.frame_length), variant_dataframe.head(self.frame_length), dataframe_extended.head(self.frame_length)

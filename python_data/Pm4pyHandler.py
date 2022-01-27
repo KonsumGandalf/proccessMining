@@ -26,6 +26,11 @@ from pm4py.algo.discovery.alpha import algorithm as alpha_miner
 from pm4py.algo.discovery.inductive import algorithm as inductive_miner
 from pm4py.algo.discovery.heuristics import algorithm as heuristic_miner
 from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
+from pm4py.objects.conversion.dfg import converter as bpmn_converter_dfg
+from pm4py.objects.conversion.process_tree import converter as bpmn_converter_tree
+from pm4py.objects.conversion.heuristics_net import converter as bpmn_converter_heu
+from pm4py.objects.bpmn.layout import layouter
+
 
 from pm4py.algo.conformance.tokenreplay import algorithm as token_replay
 from pm4py.algo.conformance.tokenreplay import algorithm as token_based_replay
@@ -39,6 +44,7 @@ from pm4py.visualization.process_tree import visualizer as pt_visualizer
 from pm4py.visualization.petri_net import visualizer as pn_visualizer
 from pm4py.visualization.heuristics_net import visualizer as hn_visualizer
 from pm4py.visualization.dfg import visualizer as dfg_visualizer
+from pm4py.visualization.bpmn import visualizer as bpmn_visualizer
 
 """
 Importing evaluation functions
@@ -474,6 +480,13 @@ class Pm4pyHandler:
 
         return rating_list
 
+    def bpmn_dealer(self,io_name,tree):
+        gviz = layouter.apply(bpmn_converter_tree.apply(tree=tree, variant=bpmn_converter_tree.Variants.TO_BPMN))
+        gviz2 = bpmn_converter_tree.apply(tree=tree, variant=bpmn_converter_tree.Variants.TO_BPMN)
+        self.save_file(gviz, filename=io_name+'_process_tree', add_dir_2=io_name, mode='bpmn')
+        self.save_file(gviz2, filename=io_name + '_process_tree2', add_dir_2=io_name, mode='bpmn')
+
+
     def local_visualization(self, io_name):
 
         petri_net = self.inductive_processing(mode_detail='petri_net', variant='imd')
@@ -504,6 +517,9 @@ class Pm4pyHandler:
         dfg = self.dfg_processing(variant=variant_dfg)
         gviz = self.dfg_visualization(dfg)
         self.save_file(gviz, filename='dfg', add_dir_2=io_name)
+        print(1)
+        self.bpmn_dealer(io_name, process_tree)
+
 
 
     def visualize_diagram(self, session_dir, add_dir_2='', add_suffix=''):
