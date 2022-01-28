@@ -394,7 +394,7 @@ class Pm4pyHandler:
             if isAlignments: print('Alignment', e1.alignments)
 
         if isScore == True:
-            return e1.get_score()
+            return e1.get_score(), e1.__getitem__(full=True)
 
         return result
 
@@ -818,7 +818,7 @@ class Pm4pyHandler:
                     else:
                         return regular_traces, irregular_traces, anomalous_traces_str
 
-    def search_best_para_heu_prepare(self, session_dir):
+    def search_best_para_heu_prepare(self, session_dir, io_name=''):
         """
         Requires search_best_parameters_heuristic_recursive!
 
@@ -842,15 +842,22 @@ class Pm4pyHandler:
         min_dfg_count, max_dfg_count = min_act_count, max_act_count
         multiplier: int = variants_count[math.floor(len(variants_count) * 0.1)]['count']
 
-        result = self.search_best_parameters_heuristic_recursive(multiplier, min_act_count, max_act_count
+        score_result = self.search_best_parameters_heuristic_recursive(multiplier, min_act_count, max_act_count
                                                             , min_dfg_count, max_dfg_count,
-                                                            (min_act_count, min_dfg_count, 0))
-        print(f'The best score: {result[0]} with the min_act: {result[1]} and the min_occ: {result[2]}')
+                                                            (min_act_count, min_dfg_count, 0),
+                                                            isinspect=True)
+        output_str = f'The best score: {score_result[0]} with the min_act: {score_result[1]} and the min_occ: {score_result[2]}' \
+                     f'\nSingle categorizes:\n {score_result[3]}'
+        print(output_str)
         """
         All diagrams which can be provided by the pmHandler are visualized 
         """
         try:
-            self.visualize_diagram(session_dir, add_suffix=f'{math.floor(result[1])}_{math.floor(result[2])}')
+            from datetime import date
+            self.save_file(file=output_str,
+                            filename=f'{io_name}_{date.today()}_heuristic_approximation', session_dir=session_dir,
+                            add_dir='Pm4Py', add_dir_2='Rating')
+            self.visualize_diagram(session_dir, add_suffix=f'{math.floor(score_result[1])}_{math.floor(score_result[2])}')
         except:
             print('not all defined')
 
@@ -871,18 +878,19 @@ class Pm4pyHandler:
         }
         self.update_parameters(param, replace=True)
         model = self.heuristic_processing('petri_net')
-        cur_score = self.rating_net_model(model, output=True, isConformance=False, isAlignments=False,
+        cur_score, score_str = self.rating_net_model(model, output=True, isConformance=False, isAlignments=False,
                                                isScore=True)
-        if cur_score < best_score_and_par[0] or (
-                cur_act * multiplier > max_act * multiplier and cur_dfg * multiplier > max_dfg):
+        if cur_score > best_score_and_par[0]:
+            return self.search_best_parameters_heuristic_recursive(multiplier, cur_act, max_act, cur_dfg, max_dfg,
+                                                                   (cur_score, cur_act, cur_dfg, score_str),
+                                                                   isinspect=isinspect)
+        else:
             if multiplier < 1.3:
                 return best_score_and_par
             multiplier = math.sqrt(multiplier)
             return self.search_best_parameters_heuristic_recursive(multiplier, min_act, max_act, min_dfg, max_dfg,
-                                                              best_score_and_par)
-        else:
-            return self.search_best_parameters_heuristic_recursive(multiplier, cur_act, max_act, cur_dfg, max_dfg,
-                                                              (cur_score, cur_act, cur_dfg))
+                                                              best_score_and_par, isinspect=isinspect)
+
 
     def apply_pareto_principle(self, percentage_to_hold=0.2):
         from pm4py.algo.filtering.log.variants import variants_filter
