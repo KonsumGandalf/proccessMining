@@ -1,12 +1,9 @@
-import pandas as pd
 from pm4py.objects.conversion.log import converter as log_converter
 
-
-from python_data.DataIO import EventHandler, save_file
-from python_data.FilterHandler import FilterHelper
-from python_data.PresentHandler import PltPresent
-from python_data.Pm4pyHandler import Pm4pyHandler
+from python_data.DataIO import EventHandler
 from python_data.LogHandler import LogHandler
+from python_data.Pm4pyHandler import Pm4pyHandler
+from python_data.PresentHandler import PltPresent
 
 TEST_NAME = 'BPI_test.pkl'
 FILE_NAME_OUTDATED = 'BPI_Challenge_2019.csv'
@@ -26,14 +23,15 @@ def variant_helper(event_log, df, io_name):
     variant_native, variant_dataframe, dataframe_extended = LogHandler1.groupby_func(0, 'exact', display_df=True)
 
     PresentationHandler1 = PltPresent(data=variant_native, mode_list=['plt'], col1='index_format', col2='percentage',
-                                      title='Top 100 values - bar chart of variants percentage', x_label='variant', y_label='count'
+                                      title='Top 100 values - bar chart of variants percentage', x_label='variant',
+                                      y_label='count'
                                       , frame_length=FRAME_LENGTH, size=size)
 
     PresentationHandler1.pandas_full_presentation()
     fig = PresentationHandler1.cum_pdf_chart()
     fig2 = PresentationHandler1.histogram_dealer()
     PresentationHandler1.save_plt(fig, filename=f'{io_name}_percentage_per_case', session_dir=SESSION_DIR,
-                       diagram_type='histogram', add_dir_3=io_name)
+                                  diagram_type='histogram', add_dir_3=io_name)
     PresentationHandler1.save_plt(fig2, filename=f'{io_name}_percentage_per_case', session_dir=SESSION_DIR,
                                   diagram_type='histogram', add_dir_3=io_name)
 
@@ -81,21 +79,16 @@ def variant_helper(event_log, df, io_name):
                                   diagram_type='histogram', add_dir_3=io_name)
 
 
-
-
-
-
 def for_all_categories():
-
     """The first list applies the unadjusted event log"""
     parameter_list = [
-        ('imd',False, (0.9, 625, 625), False),
-        ('imd',False, (0.9, 729, 729), False),
-        ('imd',False, (0.9, 16, 16), False),
-        ('imd',False, (0.9, 1796, 1796), False)
+        ('imd', False, (0.9, 625, 625), False),
+        ('imd', False, (0.9, 729, 729), False),
+        ('imd', False, (0.9, 16, 16), False),
+        ('imd', False, (0.9, 1796, 1796), False)
     ]
 
-    for idx,cat_str in enumerate(list_case_cat):
+    for idx, cat_str in enumerate(list_case_cat):
         io_name = cat_str.replace(" ", "_")
         event_handler = EventHandler(additional_path=SESSION_DIR, data_name=f'{io_name}.pkl')
         df = event_handler.read_pickle()
@@ -106,7 +99,7 @@ def for_all_categories():
         # pmHandler.visualize_diagram(session_dir=SESSION_DIR,add_suffix=io_name, add_dir_2=io_name)
         # variant_helper(event_log_pareto_principle, df, io_name+'_pareto')
         # variant_helper(event_log, df, io_name+'_unadjusted')
-        pmHandler.local_visualization(io_name+'_heu_unadjusted')
+        pmHandler.local_visualization(io_name + '_heu_unadjusted')
 
         # event_log_pareto_principle = pmHandler.apply_pareto_principle()
         # df_pareto = log_converter.apply(event_log_pareto_principle, variant=log_converter.TO_DATA_FRAME)
@@ -124,8 +117,10 @@ def for_all_categories():
         pmHandler = Pm4pyHandler(event_log, session_dir=SESSION_DIR, format_img='svg')
         pmHandler.local_visualization(io_name=io_name+'_pareto', pareto_log=True)"""
 
+
 def main():
     for_all_categories()
+
 
 if __name__ == '__main__':
     main()
