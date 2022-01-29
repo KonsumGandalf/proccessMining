@@ -5,6 +5,10 @@ from python_data.LogHandler import LogHandler
 from python_data.Pm4pyHandler import Pm4pyHandler
 from python_data.PresentHandler import PltPresent
 
+"""Those imports are just temporarily needed needed"""
+import pandas as pd
+from python_data.DataIO import save_file
+
 TEST_NAME = 'BPI_test.pkl'
 FILE_NAME_OUTDATED = 'BPI_Challenge_2019.csv'
 FILE_NAME = 'BPI_columns_dropped.pkl'
@@ -80,6 +84,7 @@ def variant_helper(event_log, df, io_name):
 
 
 def for_all_categories():
+
     """The first list applies the unadjusted event log"""
     parameter_list = [
         ('imd', False, (0.9, 625, 625), False),
@@ -99,13 +104,20 @@ def for_all_categories():
         # pmHandler.visualize_diagram(session_dir=SESSION_DIR,add_suffix=io_name, add_dir_2=io_name)
         # variant_helper(event_log_pareto_principle, df, io_name+'_pareto')
         # variant_helper(event_log, df, io_name+'_unadjusted')
-        pmHandler.local_visualization(io_name + '_heu_unadjusted')
+        # pmHandler.local_visualization(io_name + '_heu_unadjusted')
 
         # event_log_pareto_principle = pmHandler.apply_pareto_principle()
         # df_pareto = log_converter.apply(event_log_pareto_principle, variant=log_converter.TO_DATA_FRAME)
         # pmHandler.update_log(event_log_pareto_principle)
         # save_file(df_pareto, session_dir=SESSION_DIR, name=io_name, program_dir='cache', add_dir_3='pareto_principle')
         # pmHandler.local_visualization(io_name=io_name, inductive_variant=parameter_list[idx][0], heu_set=parameter_list[idx][2])
+
+    """
+    overview_df = pd.DataFrame()
+        # overview_df = overview_df.append(df)
+    overview_df.index = [idx for idx in range(len(overview_df))]
+    print(overview_df)
+    save_file(overview_df, session_dir=SESSION_DIR, name='all_categories', program_dir='cache', add_dir_3='unadjusted')"""
 
     """The second list applies the pareto principle to event log"""
 
@@ -116,6 +128,14 @@ def for_all_categories():
         event_log = log_converter.apply(df, variant=log_converter.TO_EVENT_LOG)
         pmHandler = Pm4pyHandler(event_log, session_dir=SESSION_DIR, format_img='svg')
         pmHandler.local_visualization(io_name=io_name+'_pareto', pareto_log=True)"""
+
+def for_all_purchase_items():
+    pur_item_list = ['']
+
+    event_handler = EventHandler(additional_path=SESSION_DIR, data_name=f'all_categories.pkl')
+    df = event_handler.read_pickle()
+    event_log = log_converter.apply(df, variant=log_converter.TO_EVENT_LOG)
+    pmHandler = Pm4pyHandler(log=event_log, session_dir=SESSION_DIR, format_img='svg')
 
 
 def main():

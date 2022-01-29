@@ -7,7 +7,7 @@ from python_data.PresentHandler import PltPresent
 
 TEST_NAME = 'BPI_test.pkl'
 FILE_NAME_OUTDATED = 'BPI_Challenge_2019.csv'
-FILE_NAME = 'BPI_columns_dropped.pkl'
+FILE_NAME = 'pkl/BPI_columns_dropped.pkl'
 SESSION_DIR = 'BPI_Challenge_2019'
 event_handler = EventHandler(FILE_NAME, additional_path=SESSION_DIR)
 
@@ -155,12 +155,12 @@ def main():
         for ele in present_col:
             try:
                 data = dataframe[ele].value_counts(normalize=False)
-                if len(data.index) < 30:
+                if len(data.index) < 2000:
                     fig = presenter.pie_dealer(mode='pie', loc_title=f"{dataframe_name}_{ele}", value_list=data.tolist(),
                                                label_list=data.index.tolist())
                     presenter.save_plt(figure=fig, filename=f"{dataframe_name.replace(':', '_')}_{ele.replace(':', '_')}",
                                        session_dir=SESSION_DIR,
-                                       diagram_type='pie', add_dir_3=dataframe_name)
+                                       diagram_type='pie_2', add_dir_3=dataframe_name)
             except KeyError:
                 print(KeyError(f'{ele} is not defined'))
 
@@ -247,11 +247,11 @@ def main():
         fltr = FilterHelper(log=df_full)
         for ele_str in list_case_cat:
             io_name = ele_str.replace(' ', '_')
-            event_log_category = fltr.filter_on_attr(mode='attr_single_events', attr_list=[ele_str],
-                                                     attr_col='case:item:cat')
+            """event_log_category = fltr.filter_on_attr(mode='attr_single_events', attr_list=[ele_str],
+                                                     attr_col='case:item:cat')"""
             eve_hand_cat = EventHandler(additional_path=SESSION_DIR, data_name=f"{io_name}.pkl")
             df_category_filtered = eve_hand_cat.read_pickle()
-            event_log_category_filtered = log_converter.apply(df_category_filtered,
+            """event_log_category_filtered = log_converter.apply(df_category_filtered,
                                                               variant=log_converter.Variants.TO_EVENT_LOG)
             len_unfiltered, len_filtered = len(event_log_category), len(event_log_category_filtered)
             cat_len_dict[ele_str] = len_filtered
@@ -263,11 +263,12 @@ def main():
                                    y_label='Length of the event_log')
             fig = presenter.histogram_dealer()
             presenter.save_plt(fig, filename=f'{io_name}_size_change', session_dir=SESSION_DIR,
-                               diagram_type='histogram')
+                               diagram_type='histogram')"""
 
             get_statistics(df_category_filtered, dataframe_name=ele_str)
 
         cat_as_pie_dia()
+
 
 
     global list_case_cat
@@ -279,7 +280,7 @@ def main():
         filter_for_case_class_compliant(log)"""
     # first_init_dataframe()
     # group_to_cat()
-    present_len_dif()
+    # present_len_dif()
     """event_handler.update(additional_path=SESSION_DIR, data_name=FILE_NAME)
     df = event_handler.read_pickle()
     presenter = PltPresent(data=df, mode_list=['terminal'])
@@ -291,6 +292,7 @@ def main():
     # filter_on_wrong_entries()
 
 
+    get_statistics_helper()
 
 if __name__ == '__main__':
     main()
