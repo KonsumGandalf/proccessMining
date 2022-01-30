@@ -425,7 +425,7 @@ class Pm4pyHandler:
                  heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: 3
              }),
             ('0-8_30_30', {
-                heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.8,
+                heuristic_miner.Variants.CLASSIC.value.Parameters.DEPENDENCY_THRESH: 0.9,
                 heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_ACT_COUNT: 30,
                 heuristic_miner.Variants.CLASSIC.value.Parameters.MIN_DFG_OCCURRENCES: 30
             }),

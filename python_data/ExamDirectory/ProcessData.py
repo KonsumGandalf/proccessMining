@@ -26,7 +26,6 @@ def get_statistics(dataframe, dataframe_name=''):
 
     cum_value_for_stat += empty_values_per_column['case:area']
     presenter.set_data(data=empty_values_per_column)
-    print(dataframe_name)
     presenter.apply()
 
 

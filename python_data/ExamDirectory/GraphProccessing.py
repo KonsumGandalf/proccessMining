@@ -19,8 +19,6 @@ cum_value_for_stat = 0
 
 
 def variant_helper(event_log, df, io_name):
-    from pm4py.algo.filtering.log.variants import variants_filter
-    print(variants_filter.get_variants(event_log))
     FRAME_LENGTH = 100
     size = (30, 5)
     LogHandler1 = LogHandler(log=event_log, mode='variant', frame_length=FRAME_LENGTH, dataframe=df)
@@ -32,12 +30,14 @@ def variant_helper(event_log, df, io_name):
                                       , frame_length=FRAME_LENGTH, size=size)
 
     PresentationHandler1.pandas_full_presentation()
+    """
     fig = PresentationHandler1.cum_pdf_chart()
     fig2 = PresentationHandler1.histogram_dealer()
     PresentationHandler1.save_plt(fig, filename=f'{io_name}_percentage_per_case', session_dir=SESSION_DIR,
                                   diagram_type='histogram', add_dir_3=io_name)
     PresentationHandler1.save_plt(fig2, filename=f'{io_name}_percentage_per_case', session_dir=SESSION_DIR,
                                   diagram_type='histogram', add_dir_3=io_name)
+    """
 
     # difference to his diagram he forgets to use frame_length => lost dimension
     PresentationHandler2 = PltPresent(dataframe_extended, mode_list=['plt'], col1='index_format',
@@ -47,6 +47,7 @@ def variant_helper(event_log, df, io_name):
                                       frame_length=FRAME_LENGTH, size=size)
 
     PresentationHandler2.pandas_full_presentation()
+    """
     fig1 = PresentationHandler2.cum_pdf_chart()
     fig2 = PresentationHandler2.histogram_dealer()
     PresentationHandler2.save_plt(fig1, filename=f'{io_name}_avg_duration_per_case', session_dir=SESSION_DIR,
@@ -81,7 +82,7 @@ def variant_helper(event_log, df, io_name):
                                   diagram_type='histogram', add_dir_3=io_name)
     PresentationHandler4.save_plt(fig2, filename=f'{io_name}_sum_duration_per_case', session_dir=SESSION_DIR,
                                   diagram_type='histogram', add_dir_3=io_name)
-
+    """
 
 def for_all_categories():
 
@@ -103,7 +104,7 @@ def for_all_categories():
         # pmHandler.search_best_para_heu_prepare(session_dir=SESSION_DIR, io_name=io_name)
         # pmHandler.visualize_diagram(session_dir=SESSION_DIR,add_suffix=io_name, add_dir_2=io_name)
         # variant_helper(event_log_pareto_principle, df, io_name+'_pareto')
-        # variant_helper(event_log, df, io_name+'_unadjusted')
+        variant_helper(event_log, df, io_name+'_unadjusted')
         # pmHandler.local_visualization(io_name + '_heu_unadjusted')
 
         # event_log_pareto_principle = pmHandler.apply_pareto_principle()
