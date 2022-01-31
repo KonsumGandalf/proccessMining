@@ -10,7 +10,7 @@ import matplotlib
 import os
 
 PATH_EXAM = '../../src/data/exam_data'
-PATH_COURSE = '../../src/data/course_data'  # Alternative: PM-Regensburg
+PATH_COURSE = '../../src/data/input'  # Alternative: PM-Regensburg
 OUTPUT_PATH = '../../src/data/output'
 
 class EventHandler:
