@@ -1,5 +1,14 @@
 # created by virtualenv automatically
 *.pyc
 .idea/
-*.csv
-*.pkl
+#*.csv
+#*.pkl
+/src/data/input
+/src/data/winner_data
+/src/data/output/BPI_Challenge_2019/outdated
+src/data/output/BPI_Challenge_2019/ProcessData
+src/data/output/BPI_Challenge_2019/used_pngs
+src/data/output/ArtificialPatientTreatment
+src/data/output/ArtificialPatientTreatmentV3
+src/data/output/CallCenterLog
+src/data/output/scenario1_DepL
